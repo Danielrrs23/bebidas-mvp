@@ -1,0 +1,29 @@
+# Como rodar o projeto
+
+1. Extraia este arquivo .zip.
+2. Abra a pasta do projeto no terminal.
+3. Instale as dependências:
+   ```bash
+   npm install
+   ```
+4. Rode em modo de desenvolvimento:
+   ```bash
+   npm run dev
+   ```
+   O site abrirá em http://localhost:3000
+
+# Como publicar no Vercel
+
+1. Crie um repositório no GitHub.
+2. Envie os arquivos para o GitHub:
+   ```bash
+   git init
+   git add .
+   git commit -m "Primeira versão Tadahora"
+   git branch -M main
+   git remote add origin https://github.com/seuusuario/tadahora.git
+   git push -u origin main
+   ```
+3. Vá no site da **Vercel** (https://vercel.com), conecte com sua conta GitHub.
+4. Clique em **New Project** → Selecione o repositório `tadahora`.
+5. Clique em **Deploy**. Pronto ✅
