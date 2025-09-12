@@ -9,5 +9,3 @@ body { font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvet
 .bg-accent { background-color: var(--accent); }
 .bg-sunny { background-color: var(--sunny); }
 .hover\:scale-102:hover { transform: scale(1.02); }
-.animate-pulse { animation: pulse 400ms ease; }
-@keyframes pulse { 0% { transform: translateY(0);} 50% { transform: translateY(-4px);} 100% { transform: translateY(0);} }

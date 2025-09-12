@@ -1,9 +1,8 @@
-      # CUMê Água - Next.js MVP
+      # CUMê Água - Next.js MVP (v2)
 
-      Pacote pronto para deploy no Vercel com catálogo de bebidas e carrinho interativo.
+      Projeto com layout inicial inspirado em apps de delivery, catálogo, carrinho e checkout fictício.
 
-
-      ## Como usar (local)
+## Como usar (local)
 
 1. Extraia o ZIP.
 2. Abra a pasta no terminal.
@@ -24,9 +23,5 @@ npm run dev
 
 ## Deploy no Vercel
 
-- Suba este projeto para um repositório GitHub e importe no Vercel (ou faça upload direto).
-- O Next.js é detectado automaticamente, rode Deploy.
+- Suba este projeto para um repositório GitHub e importe no Vercel.
 
-## Notas
-- Paleta: vermelho/laranja/amarelo para instigar apetite e ação; detalhes em verde-água.
-- Próximos passos para profissionalizar: persistência do carrinho (localStorage/API), integrações de pagamento e backend.
