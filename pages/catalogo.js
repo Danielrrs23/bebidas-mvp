@@ -1,17 +1,33 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 
-const produtosList = [
-  { id:1, nome:'Heineken 350ml', preco:4.99, imagem:'/images/heineken-350.png' },
-  { id:2, nome:'Coca-Cola 350ml', preco:3.99, imagem:'/images/coca-350.png' },
-  { id:3, nome:'Vinho Pérgola Tinto Suave', preco:29.90, imagem:'/images/pergola-vinho.png' },
+const initial = [
+  { id:1, nome:'Heineken 350ml', preco:4.99, img:'/images/heineken-350.png', cat:'Cervejas' },
+  { id:2, nome:'Coca-Cola 350ml', preco:3.99, img:'/images/coca-350.png', cat:'Refrigerantes' },
+  { id:3, nome:'Vinho Pérgola Tinto Suave', preco:29.90, img:'/images/pergola-vinho.png', cat:'Vinhos' },
+  { id:4, nome:'Vinho Rosé Secreto 750ml', preco:49.90, img:'/images/pergola-vinho.png', cat:'Vinhos' },
+  { id:5, nome:'Churrasqueiro + Kit Carnes', preco:199.00, img:'/images/layout-sample.jpg', cat:'Churrasco' },
 ]
 
 export default function Catalogo(){
-  const [produtos] = useState(produtosList)
+  const [produtos] = useState(initial)
   const [carrinho, setCarrinho] = useState([])
-  const add = (p) => setCarrinho(c => [...c, p])
-  const remove = (i) => setCarrinho(c => { const n=[...c]; n.splice(i,1); return n })
+
+  useEffect(()=>{
+    // carregar carrinho do localStorage
+    try{
+      const raw = localStorage.getItem('carrinho_v3')
+      if(raw) setCarrinho(JSON.parse(raw))
+    }catch(e){}
+  },[])
+
+  useEffect(()=>{
+    // persistir no localStorage
+    localStorage.setItem('carrinho_v3', JSON.stringify(carrinho))
+  },[carrinho])
+
+  const add = (p)=> setCarrinho(c=>[...c,p])
+  const remove = (i)=> setCarrinho(c=>{ const n=[...c]; n.splice(i,1); return n })
   const total = carrinho.reduce((s,it)=>s+it.preco,0)
 
   return (
@@ -27,12 +43,12 @@ export default function Catalogo(){
         <section className="md:col-span-2">
           <h2 className="text-2xl font-bold mb-4">Catálogo</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {produtos.map(p => (
+            {produtos.map(p=> (
               <article key={p.id} className="bg-white p-4 rounded-xl shadow flex flex-col items-center">
-                <img src={p.imagem} alt={p.nome} className="w-40 h-40 object-contain mb-3" />
-                <h3 className="font-semibold">{p.nome}</h3>
+                <img src={p.img} alt={p.nome} className="w-40 h-40 object-contain mb-3" />
+                <h3 className="font-semibold text-center">{p.nome}</h3>
                 <p className="text-gray-600">R$ {p.preco.toFixed(2)}</p>
-                <button onClick={()=>add(p)} className="mt-3 bg-sunny text-primary px-4 py-2 rounded-lg font-semibold hover:bg-accent transition">Adicionar</button>
+                <button onClick={()=>add(p)} className="mt-3 bg-primary text-white px-4 py-2 rounded-lg">Pedir</button>
               </article>
             ))}
           </div>
@@ -55,7 +71,7 @@ export default function Catalogo(){
           )}
           <div className="mt-4 border-t pt-3">
             <div className="flex justify-between items-center"><strong>Total:</strong><span className="font-semibold">R$ {total.toFixed(2)}</span></div>
-            <a href="/checkout" className="mt-3 block text-center bg-primary text-white py-2 rounded-lg">Finalizar Compra</a>
+            <Link href="/checkout"><a className="mt-3 block text-center bg-primary text-white py-2 rounded-lg">Finalizar Pedido</a></Link>
           </div>
         </aside>
       </main>

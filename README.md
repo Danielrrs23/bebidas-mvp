@@ -1,27 +1,24 @@
-      # CUMê Água - Next.js MVP (v2)
+      # CUMê Água - Next.js MVP (v3 minimalista)
 
-      Projeto com layout inicial inspirado em apps de delivery, catálogo, carrinho e checkout fictício.
+Projeto com tela inicial estilo boteco (minimalista), catálogo, carrinho persistente no localStorage e checkout UI mockado (sem backend).
 
-## Como usar (local)
+## Uso local
 
 1. Extraia o ZIP.
-2. Abra a pasta no terminal.
-3. Instale dependências:
+2. Instale dependências:
 
 ```bash
 npm install
 ```
 
-4. Rode em desenvolvimento:
+3. Rode em dev:
 
 ```bash
 npm run dev
 ```
 
-5. Abra http://localhost:3000
+4. Abra http://localhost:3000
 
+## Deploy
 
-## Deploy no Vercel
-
-- Suba este projeto para um repositório GitHub e importe no Vercel.
-
+Suba para GitHub e importe no Vercel.
