@@ -1,5 +1,5 @@
 {
-  "name": "cume-agua-v3",
+  "name": "cume-agua-v4",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -13,8 +13,8 @@
     "react-dom": "18.3.1"
   },
   "devDependencies": {
-    "autoprefixer": "10.4.14",
+    "tailwindcss": "3.4.6",
     "postcss": "8.4.23",
-    "tailwindcss": "3.4.6"
+    "autoprefixer": "10.4.14"
   }
 }
