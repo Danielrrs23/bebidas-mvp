@@ -2,7 +2,5 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-:root{--primary:#ff3b30;--accent:#FF9F1C;--sunny:#FFD166;--boteco:#FFF5E0}
-body{font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;background:var(--boteco)}
-.bg-primary{background:var(--primary)}.text-primary{color:var(--primary)}
-.hover\:scale-102:hover{transform:scale(1.02)}.transition{transition:all .18s ease}
+body{font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;background:#017C55;}
+.bg-primary{background:#017C55}.text-primary{color:#017C55}
