@@ -1,8 +1,10 @@
-# CUMê Água v5.1 – Paleta Heineken (#017C55)
+# CUMê Água v6
 
-Rodar com:
+Run locally:
 
+```bash
 npm install
 npm run dev
+```
 
-→ http://localhost:3000
+Open http://localhost:3000
