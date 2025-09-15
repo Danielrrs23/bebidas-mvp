@@ -1,8 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-:root{--primary:#017C55;--accent:#FFD700;--boteco:#FFF5E0}
-body{font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;background:var(--boteco)}
-.bg-primary{background:var(--primary)}.text-primary{color:var(--primary)}
-.hover\:scale-102:hover{transform:scale(1.02)}.transition{transition:all .18s ease}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+header {
+  background: #017C55;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+button {
+  cursor: pointer;
+}
