@@ -1,16 +1,28 @@
-
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f9f9f9;
-}
-header {
-  background: #017C55;
-  color: white;
-  padding: 1rem;
-  text-align: center;
-}
-button {
-  cursor: pointer;
+:root{ --brand:#017C55; --muted:#f9f6f0; --card:#fff; --text:#222; }
+*{box-sizing:border-box} body{font-family:Inter,Arial,Helvetica,sans-serif;margin:0;background:var(--muted);color:var(--text);}
+.top{display:flex;justify-content:space-between;align-items:center;padding:18px 28px;background:white;box-shadow:0 1px 0 rgba(0,0,0,0.03)}
+.brand{font-weight:700;color:var(--brand)}
+.container{max-width:1100px;margin:28px auto;padding:0 18px;display:grid;grid-template-columns:1fr 320px;gap:20px;align-items:start;}
+.hero{grid-column:1/2;padding:20px;background:white;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.04);margin-bottom:12px}
+.cat-list{display:flex;gap:12px;margin-top:8px}
+.cat-list button{background:white;border:1px solid #eee;padding:12px 18px;border-radius:10px}
+.cat-list button.active{border-color:var(--brand);box-shadow:0 4px 10px rgba(1,124,85,0.08)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;padding-top:12px}
+.card{background:var(--card);padding:18px;border-radius:12px;text-align:center;box-shadow:0 6px 18px rgba(0,0,0,0.04);min-height:260px;display:flex;flex-direction:column;align-items:center;justify-content:space-between}
+.card img{width:160px;height:160px;object-fit:cover;border-radius:8px}
+.price{color:var(--brand);font-weight:700;margin-top:8px}
+.btn{background:var(--brand);color:white;border:none;padding:10px 14px;border-radius:8px;cursor:pointer;margin-top:8px}
+.cart{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.04);height:fit-content}
+.total{font-weight:700;margin-top:12px}
+.checkout{display:inline-block;background:var(--brand);color:white;padding:10px 14px;border-radius:8px;text-decoration:none;margin-top:10px}
+.foot{text-align:center;padding:24px;color:#666;font-size:13px}
+.checkout-page{max-width:680px;margin:40px auto;padding:0 18px}
+.checkout-page .box{background:white;padding:16px;border-radius:10px;margin-bottom:12px}
+.checkout-page input{width:100%;padding:10px;border-radius:8px;border:1px solid #eee}
+.summary{background:white;padding:16px;border-radius:10px}
+.place{background:var(--brand);color:white;padding:10px 16px;border-radius:8px;border:none;cursor:pointer}
+@media(max-width:900px){
+  .container{grid-template-columns:1fr; padding-bottom:40px}
+  .grid{grid-template-columns:repeat(1,1fr)}
+  .cart{order:2}
 }
